@@ -129,7 +129,7 @@ int main()
         cin>>s;
         terminals.push_back(s);
     }
-    cout<<"Enter the number of productions: ";
+    cout<<"#productions: ";
     cin>>n_prod;
     cout<<"Start symbol: ";
     cin>>start_sym;

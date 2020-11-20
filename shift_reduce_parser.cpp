@@ -20,14 +20,15 @@ int main()
 	stack.push_back("$");
 	int ip=0;
 
-	cout<<setw(10)<<left<<"STACK";
-	cout<<setw(15)<<left<<"INPUT STRING"<<"\t"<<"ACTION"<<endl;
+	cout<<setw(10)<<left<<"\nSTACK";
+	cout<<setw(15)<<left<<"\tINPUT STRING"<<endl;
+	cout<<"-----------------------------------\n";
 	string action="";
 	while(ip<input_string.size())
 	{
 		for(int i=0;i<stack.size();i++)
 			cout<<stack[i];
-		cout<<"\t";
+		cout<<"\t\t";
 		for(int i=ip;i<input_string.size();i++)
 			cout<<input_string[i];
 		cout<<"\t"<<action<<endl;

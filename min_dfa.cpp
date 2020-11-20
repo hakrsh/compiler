@@ -41,9 +41,9 @@ int main()
 	vector<string> states,inputs,final_states;
 	map<string,int> states_to_index;
 	int num_states, num_inputs,i,j;
-	cout<<"Number of states: ";
+	cout<<"#states: ";
 	cin>>num_states;
-	cout<<"Number of inputs: ";
+	cout<<"#inputs: ";
 	cin>>num_inputs;
 	for(i=0;i<num_states;i++)
 	{
@@ -71,7 +71,8 @@ int main()
 		for(j=0;j<num_inputs;j++)
 		{
 			string ch;
-			cout<<"current state: "<<states[i]<<" input: "<<inputs[j]<<" next state: ";
+			// cout<<"current state: "<<states[i]<<" input: "<<inputs[j]<<" next state: ";
+			cout<<states[i]<<" on: "<<inputs[j]<<" : ";
 			cin>>ch;
 			st_table[states[i]][inputs[j]]=ch;
 		}
@@ -80,7 +81,8 @@ int main()
 	cout<<setw(20)<<left<<"STATE";
 	for(i=0;i<inputs.size();i++)
 		cout<<setw(20)<<left<<inputs[i];
-	cout<<endl;
+	cout << endl
+          << "--------------------------------------------------------------------\n";
 	for(i=0;i<num_states;i++)
 	{
 		cout<<setw(20)<<left<<states[i];
@@ -88,7 +90,8 @@ int main()
 		{
 			cout<<setw(20)<<left<<st_table[states[i]][inputs[j]];
 		}
-		cout<<"\n";
+		cout << endl
+          << "--------------------------------------------------------------------\n";
 	}
 
 	int pair_table[num_states][num_states];

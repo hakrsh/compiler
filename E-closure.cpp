@@ -28,7 +28,7 @@ string epsilon(string cur_st, vector<string> states, map<string, map<string,stri
 		if(find(visited.begin(),visited.end(),tokens[0])!=visited.end())
 			return "";
 		visited.push_back(tokens[0]);
-		cout<<tokens[0]<<endl<<endl;
+		// cout<<tokens[0]<<endl<<endl;
 		return tokens[0]+","+epsilon(tokens[0],states,st_table);
 	}
 	else
@@ -47,9 +47,9 @@ int main()
 {
 	vector<string> states,inputs;
 	int num_states, num_inputs,i,j;
-	cout<<"Number of states: ";
+	cout<<"#states: ";
 	cin>>num_states;
-	cout<<"Number of inputs: ";
+	cout<<"#inputs: ";
 	cin>>num_inputs;
 	for(i=0;i<num_states;i++)
 	{
@@ -74,25 +74,26 @@ int main()
 		for(j=0;j<num_inputs;j++)
 		{
 			string ch;
-			cout<<"current state: "<<states[i]<<" input: "<<inputs[j]<<" next state: ";
+			// cout<<"current state: "<<states[i]<<" input: "<<inputs[j]<<" next state: ";
+			cout<<states[i]<<" on: "<<inputs[j]<<" : ";
 			cin>>ch;
 			st_table[states[i]][inputs[j]]=ch;
 		}
 	}
-	cout<<"\nNFA state table with 'Epsilon' transitions: \n\n";
-	cout<<setw(20)<<left<<"STATE";
-	for(i=0;i<inputs.size();i++)
-		cout<<setw(20)<<left<<inputs[i];
-	cout<<endl;
-	for(i=0;i<num_states;i++)
-	{
-		cout<<setw(20)<<left<<states[i];
-		for(j=0;j<num_inputs;j++)
-		{
-			cout<<setw(20)<<left<<st_table[states[i]][inputs[j]];
-		}
-		cout<<"\n";
-	}
+	// cout<<"\nNFA state table with 'Epsilon' transitions: \n\n";
+	// cout<<setw(20)<<left<<"STATE";
+	// for(i=0;i<inputs.size();i++)
+	// 	cout<<setw(20)<<left<<inputs[i];
+	// cout<<endl;
+	// for(i=0;i<num_states;i++)
+	// {
+	// 	cout<<setw(20)<<left<<states[i];
+	// 	for(j=0;j<num_inputs;j++)
+	// 	{
+	// 		cout<<setw(20)<<left<<st_table[states[i]][inputs[j]];
+	// 	}
+	// 	cout<<"\n";
+	// }
 
 	map<string,string> closure;
 	for(i=0;i<num_states;i++)

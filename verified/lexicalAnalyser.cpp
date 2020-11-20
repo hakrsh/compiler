@@ -68,7 +68,11 @@ int main()
 	fstream f;
 	string line;
 	vector<string> keywords,operators,identifiers,decimals;
-	f.open("input3.txt",ios::in);
+	string filename;
+	cout <<"Enter file name: ";
+	cin >> filename;
+	// f.open("input3.txt",ios::in);
+	f.open(filename,ios::in);
 	while(getline(f,line))
 	{
 		int r=0,l=0,len=line.length();

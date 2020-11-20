@@ -249,7 +249,7 @@ int main()
 {
 	map <string,string> productions;
 	int n_prod,i,j;
-	cout<<"Enter the number of productions: ";
+	cout<<"#productions: ";
 	cin>>n_prod;
 	cout<<"Start symbol: ";
 	cin>>start_sym;
